@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Scott - AI/ML Architect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header Section with Gradient */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(100px, -100px);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .tagline {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact-bar {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-bar a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-bar a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Key Metrics Dashboard */
+        .metrics-dashboard {
+            background: #f8f9fa;
+            padding: 25px 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .metric-card {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+        }
+        
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main Content Area */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 30px;
+            padding: 30px 40px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .sidebar h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #495057;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+        
+        /* Skill Bars */
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-category h3 {
+            font-size: 12px;
+            color: #6c757d;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .skill-item {
+            margin-bottom: 12px;
+        }
+        
+        .skill-name {
+            font-size: 13px;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            color: #495057;
+        }
+        
+        .skill-bar {
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+        
+        /* Main Content */
+        .main-content h2 {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #495057;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+        
+        /* Project Cards */
+        .project-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s;
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+        
+        .project-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .project-link {
+            font-size: 12px;
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        .project-metrics {
+            display: flex;
+            gap: 15px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+        
+        .project-metric {
+            background: #f8f9fa;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #495057;
+        }
+        
+        .project-metric strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        /* Code Snippet */
+        .code-snippet {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 11px;
+            margin: 12px 0;
+            overflow-x: auto;
+        }
+        
+        .code-comment {
+            color: #95a5a6;
+        }
+        
+        .code-keyword {
+            color: #e74c3c;
+        }
+        
+        .code-string {
+            color: #f39c12;
+        }
+        
+        .code-number {
+            color: #3498db;
+        }
+        
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e9ecef;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #e9ecef;
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .timeline-date {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        /* Tech Stack Pills */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .tech-pill {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        /* Education & Certs */
+        .cert-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            
+            .header {
+                padding: 20px 30px;
+            }
+            
+            .metrics-dashboard {
+                padding: 15px 30px;
+            }
+            
+            .content {
+                padding: 20px 30px;
+            }
+            
+            .project-card {
+                break-inside: avoid;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .metrics-dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>MATTHEW SCOTT</h1>
+        <div class="tagline">AI/ML Architect | Multi-Model Orchestration Specialist | Production Systems Engineer</div>
+        <div class="contact-bar">
+            <span>📍 Louisville, KY</span>
+            <span>📧 matthewdscott7@gmail.com</span>
+            <span>📱 502-345-0525</span>
+            <a href="https://github.com/guitargnar">🔗 github.com/guitargnar</a>
+            <a href="https://linkedin.com/in/mscott77">💼 linkedin.com/in/mscott77</a>
+        </div>
+    </div>
+    
+    <!-- Key Metrics Dashboard -->
+    <div class="metrics-dashboard">
+        <div class="metric-card">
+            <span class="metric-value">79+</span>
+            <span class="metric-label">Models Orchestrated</span>
+        </div>
+        <div class="metric-card">
+            <span class="metric-value">$1.2M+</span>
+            <span class="metric-label">Value Generated</span>
+        </div>
+        <div class="metric-card">
+            <span class="metric-value">92%</span>
+            <span class="metric-label">Model Accuracy</span>
+        </div>
+        <div class="metric-card">
+            <span class="metric-value">99.3%</span>
+            <span class="metric-label">Success Rate</span>
+        </div>
+    </div>
+    
+    <!-- Main Content Grid -->
+    <div class="content">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Technical Skills</h2>
+            
+            <div class="skill-category">
+                <h3>AI/ML Frameworks</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>TensorFlow 2.20</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>PyTorch</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Scikit-learn</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>LangChain</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Programming</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>JavaScript/Node.js</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>SQL</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>MLOps & Cloud</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Docker/Kubernetes</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>AWS SageMaker</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>MLflow</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2>Education</h2>
+            <div class="cert-badge">
+                <div class="cert-icon">BA</div>
+                <div>
+                    <div style="font-weight: 600; font-size: 13px;">Communications</div>
+                    <div style="font-size: 12px; color: #6c757d;">University of Louisville</div>
+                </div>
+            </div>
+            
+            <h2>Certifications</h2>
+            <div class="cert-badge">
+                <div class="cert-icon">AWS</div>
+                <div>
+                    <div style="font-weight: 600; font-size: 13px;">ML Specialty</div>
+                    <div style="font-size: 12px; color: #6c757d;">In Progress (Q1 2025)</div>
+                </div>
+            </div>
+            
+            <h2>Key Strengths</h2>
+            <ul style="font-size: 13px; color: #495057; padding-left: 20px;">
+                <li style="margin-bottom: 8px;">Production-Ready Systems</li>
+                <li style="margin-bottom: 8px;">Self-Directed Learning</li>
+                <li style="margin-bottom: 8px;">Privacy-First Architecture</li>
+                <li style="margin-bottom: 8px;">Proven Scale (79+ models)</li>
+                <li style="margin-bottom: 8px;">Business Impact ($1.2M+)</li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Professional Summary</h2>
+            <p style="margin-bottom: 20px; color: #495057; text-align: justify;">
+                Self-taught AI/ML engineer who architected <strong>Job Intelligence Platform</strong> with TensorFlow neural networks (134 features), 
+                semantic search, and clustering achieving 92% accuracy. Built <strong>Mirador</strong>, a production-ready multi-agent orchestration 
+                platform managing 79+ specialized models with 99.3% success rate. Created 6 major AI systems generating $1.2M+ value through 
+                automation while maintaining enterprise risk management role. Seeking senior AI/ML engineering roles ($180-220K) to apply 
+                proven ability to architect sophisticated AI systems from concept to production.
+            </p>
+            
+            <h2>Key AI/ML Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">🚀 Job Intelligence Platform</div>
+                    <a href="https://github.com/guitargnar/jaspermatters-job-intelligence" class="project-link">View on GitHub →</a>
+                </div>
+                <p style="font-size: 14px; color: #6c757d; margin-bottom: 10px;">
+                    End-to-end ML platform with 3 production models for job market analysis
+                </p>
+                <div class="project-metrics">
+                    <div class="project-metric"><strong>134</strong> features</div>
+                    <div class="project-metric"><strong>92%</strong> accuracy</div>
+                    <div class="project-metric"><strong>1000+</strong> jobs/hour</div>
+                    <div class="project-metric"><strong><100ms</strong> inference</div>
+                </div>
+                <div class="code-snippet">
+                    <span class="code-comment"># Neural network architecture for salary prediction</span><br>
+                    model = tf.keras.Sequential([<br>
+                    &nbsp;&nbsp;Dense(<span class="code-number">256</span>, activation=<span class="code-string">'relu'</span>, input_shape=(<span class="code-number">134</span>,)),<br>
+                    &nbsp;&nbsp;BatchNormalization(),<br>
+                    &nbsp;&nbsp;Dropout(<span class="code-number">0.3</span>),<br>
+                    &nbsp;&nbsp;Dense(<span class="code-number">128</span>, activation=<span class="code-string">'relu'</span>),<br>
+                    &nbsp;&nbsp;Dense(<span class="code-number">1</span>, activation=<span class="code-string">'linear'</span>)  <span class="code-comment"># Salary prediction</span><br>
+                    ])
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-pill">TensorFlow 2.20</span>
+                    <span class="tech-pill">Sentence-BERT</span>
+                    <span class="tech-pill">FastAPI</span>
+                    <span class="tech-pill">PostgreSQL</span>
+                    <span class="tech-pill">Docker</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">🧠 Mirador - Multi-Agent AI Orchestration</div>
+                    <span style="font-size: 12px; color: #6c757d;">Private Repository</span>
+                </div>
+                <p style="font-size: 14px; color: #6c757d; margin-bottom: 10px;">
+                    Enterprise-grade AI system with complex reasoning and 100% data privacy
+                </p>
+                <div class="project-metrics">
+                    <div class="project-metric"><strong>79+</strong> models</div>
+                    <div class="project-metric"><strong>99.3%</strong> success</div>
+                    <div class="project-metric"><strong>7-LLM</strong> pipeline</div>
+                    <div class="project-metric"><strong>794</strong> files</div>
+                </div>
+                <div class="code-snippet">
+                    <span class="code-keyword">class</span> MiradorOrchestrator:<br>
+                    &nbsp;&nbsp;<span class="code-keyword">def</span> process(self, task):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;model = self.select_optimal_model(task)  <span class="code-comment"># 79+ models</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result = model.generate(task)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> self.validator.verify(result)
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-pill">LangChain</span>
+                    <span class="tech-pill">Ollama</span>
+                    <span class="tech-pill">ChromaDB</span>
+                    <span class="tech-pill">GPT-4</span>
+                    <span class="tech-pill">Claude 3.5</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">📊 Additional Production Systems</div>
+                    <span style="font-size: 12px; color: #6c757d;">2024-2025</span>
+                </div>
+                <ul style="font-size: 14px; color: #495057; padding-left: 20px;">
+                    <li style="margin-bottom: 8px;"><strong>Sentiment Analysis API:</strong> 94.2% accuracy, 1000+ req/sec, Redis caching 
+                        <a href="https://github.com/guitargnar/sentiment-analysis-api" style="color: #667eea; text-decoration: none;">[GitHub]</a>
+                    </li>
+                    <li style="margin-bottom: 8px;"><strong>LinkedIn AI Pipeline:</strong> 40K+ views, 15% engagement (7.5x average), multi-LLM validation</li>
+                    <li style="margin-bottom: 8px;"><strong>Vulnerability Management:</strong> ML classifier improved KR scores 70%→96.68%, saved 21-26 hrs/week</li>
+                </ul>
+            </div>
+            
+            <h2>Professional Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Senior Risk Management Professional II</div>
+                            <div style="font-size: 14px; color: #6c757d;">Humana Inc. | Louisville, KY</div>
+                        </div>
+                        <span class="timeline-date">Jan 2016 - Aug 2025</span>
+                    </div>
+                    <ul style="font-size: 14px; color: #495057; padding-left: 20px;">
+                        <li>Ensured 100% regulatory compliance for Medicare platforms serving 1M+ members</li>
+                        <li>Led cross-functional teams of 10+ through digital transformation</li>
+                        <li>Automated workflows using Python/PowerShell, saving $500K+ annually</li>
+                        <li><strong>Self-directed ML/AI learning:</strong> Built 6 production systems achieving $1.2M+ value on personal time</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Digital Marketing Analyst</div>
+                            <div style="font-size: 14px; color: #6c757d;">Mightily Agency | Louisville, KY</div>
+                        </div>
+                        <span class="timeline-date">2012 - 2016</span>
+                    </div>
+                    <ul style="font-size: 14px; color: #495057; padding-left: 20px;">
+                        <li>Improved client ROI by 25% using statistical analysis and A/B testing</li>
+                        <li>Built automated reporting pipelines, reducing generation time by 60%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
